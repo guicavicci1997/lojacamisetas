@@ -1,0 +1,13 @@
+current directory: /home/gneves/wp-gui/lojacamisetas/vendor/bundle/ruby/2.3.0/gems/json-1.8.6/ext/json
+/usr/bin/ruby2.3 -r ./siteconf20180824-9504-c2ssto.rb extconf.rb
+creating Makefile
+
+current directory: /home/gneves/wp-gui/lojacamisetas/vendor/bundle/ruby/2.3.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/gneves/wp-gui/lojacamisetas/vendor/bundle/ruby/2.3.0/gems/json-1.8.6/ext/json
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: /home/gneves/wp-gui/lojacamisetas/vendor/bundle/ruby/2.3.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" install
