@@ -4,31 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
 </head>
 <body>
 
 <%= form_for Produto.new do |f| %>
+    
+    <div class="form-group">
+        <%= f.label :nome %>
+        <%=f.text_field :nome, class: "form-control" %>
+    </div>
 
-    <form action="/produto" method="post">
-        Nome 
-        <input type="text" name="nome"><br/>
-        Descricao
-        <textarea name="nome"></textarea><br/>
-        Quantidade
-        <input type="number" name="quantidade"><br/>
-        Preco
-        <input type="number" name="preco" step="0.01"><br/>
+    <div class="form-group">
+        <%= f.label :descricao %>
+        <%=f.text_area :descricao, class: "form-control", rows: "4" %>
+    </div>
 
-        <button type="submit">Criar</button>
+    <div class="form-inline">
+        <div class="form-group">
+            <%= f.label :quantidade %>
+            <%=f.number_field :quantidade, step: 1, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <%= f.label :preco %>
+            <%=f.number_field :preco, class: "form-control" %>  
+        </div>
+        
+        <%= f.submit "Criar o Produto", class: "btn btn-primary" %>
+    </div>
 
-
-        t.string   "nome"
-        t.text     "descricao"
-        t.integer  "quantidade"
-        t.decimal  "preco"
-
-    <%end%>
+<%end%>
     
 </body>
 </html>

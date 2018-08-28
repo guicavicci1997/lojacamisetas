@@ -6,8 +6,8 @@ class ProdutosController < ApplicationController
     end
 
     def create
-        params[]
-
+        valores = params.require(:produto).permit :nome, :preco, :descricao
+        produto = Produto.create valores
 
     end
 
