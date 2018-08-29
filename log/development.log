@@ -1804,3 +1804,1050 @@ Started GET "/produtos/new" for 127.0.0.1 at 2018-08-28 16:51:38 -0300
 Processing by ProdutosController#new as HTML
   Rendered produtos/new.html.erb within layouts/application (1.8ms)
 Completed 200 OK in 30ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-08-28 17:04:06 -0300
+Processing by ProdutosController#new as HTML
+  Rendered produtos/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 26ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/produtos" for 127.0.0.1 at 2018-08-29 09:29:36 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EgWehP2sjzE9Rex0OcIhntqG0AMjRJRxd673juWWqi8uHJwI0EY3re2cG92ks3uRwN2Y92643kf7rMjrHZO6fA==", "produto"=>{"nome"=>"", "descricao"=>"", "quantidade"=>"-2", "preco"=>"-3"}, "commit"=>"Criar o Produto"}
+Unpermitted parameter: quantidade
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "produtos" ("nome", "preco", "descricao", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["nome", ""], ["preco", -3.0], ["descricao", ""], ["created_at", "2018-08-29 12:29:36.502160"], ["updated_at", "2018-08-29 12:29:36.502160"]]
+  [1m[36m (62.5ms)[0m  [1mcommit transaction[0m
+  Rendered produtos/create.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 97ms (Views: 32.1ms | ActiveRecord: 62.7ms)
+
+
+Started GET "/produtos" for 127.0.0.1 at 2018-08-29 09:33:03 -0300
+
+ActionController::RoutingError (No route matches [GET] "/produtos"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:33:05 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:39:48 -0300
+
+NoMethodError (undefined method `ger' for #<ActionDispatch::Routing::Mapper:0x007f1456d4e5b0>
+Did you mean?  gem
+               get):
+  config/routes.rb:4:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:40:04 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.3ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/produto/6/remove" for 127.0.0.1 at 2018-08-29 09:40:07 -0300
+
+ActionController::RoutingError (No route matches [GET] "/produto/6/remove"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (14.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:40:37 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/produtos/6/destroy" for 127.0.0.1 at 2018-08-29 09:40:38 -0300
+
+ActionController::RoutingError (No route matches [GET] "/produtos/6/destroy"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (14.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:40:56 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.3ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/produtos/6/destroy" for 127.0.0.1 at 2018-08-29 09:40:57 -0300
+Processing by ProdutosController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mProduto Load (0.1ms)[0m  SELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "produtos" WHERE "produtos"."id" = ?  [["id", 6]]
+  [1m[36m (106.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 149ms (ActiveRecord: 107.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:40:57 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:45:12 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.4ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (24.3ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x007f14556b1488>:0x007f1455683330>):
+    24:                 <td> <%= produto.preco %> </td>
+    25:                 <td> <%= produto.quantidade %> </td>
+    26: 
+    27:                 <%= link_to "Remover", produto, method: delete %>
+    28:             </tr>
+    29:             
+    30:             <% end %>
+  app/views/produtos/index.html.erb:27:in `block in _app_views_produtos_index_html_erb__89366487994385193_69862654476860'
+  app/views/produtos/index.html.erb:20:in `_app_views_produtos_index_html_erb__89366487994385193_69862654476860'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:45:52 -0300
+
+SyntaxError (/home/gneves/wp-gui/lojacamisetas/config/routes.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  delete "/produtos/:id/" => "produtos#destroy" as: produto
+                                                  ^):
+  config/routes.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (11.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:46:05 -0300
+
+NameError (undefined local variable or method `produto' for #<ActionDispatch::Routing::Mapper:0x007f1455fc14b0>):
+  config/routes.rb:4:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:47:41 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (26.6ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x00000003a9d0f0>:0x00000002fc7658>):
+    24:                 <td> <%= produto.preco %> </td>
+    25:                 <td> <%= produto.quantidade %> </td>
+    26: 
+    27:                 <%= link_to "Remover", produto, method: delete %>
+    28:             </tr>
+    29:             
+    30:             <% end %>
+  app/views/produtos/index.html.erb:27:in `block in _app_views_produtos_index_html_erb__89366487994385193_69862654476860'
+  app/views/produtos/index.html.erb:20:in `_app_views_produtos_index_html_erb__89366487994385193_69862654476860'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:48:21 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (19.8ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x00000003a9d0f0>:0x007f145612c340>):
+    24:                 <td> <%= produto.preco %> </td>
+    25:                 <td> <%= produto.quantidade %> </td>
+    26: 
+    27:                 <%= link_to "Remover", produto, method: delete %>
+    28:             </tr>
+    29:             
+    30:             <% end %>
+  app/views/produtos/index.html.erb:27:in `block in _app_views_produtos_index_html_erb__89366487994385193_69862654476860'
+  app/views/produtos/index.html.erb:20:in `_app_views_produtos_index_html_erb__89366487994385193_69862654476860'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:49:12 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (21.5ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x007f145651ab28>:0x007f14564e6940>):
+    24:                 <td> <%= produto.preco %> </td>
+    25:                 <td> <%= produto.quantidade %> </td>
+    26: 
+    27:                 <%= link_to "Remover", produto, method: delete %>
+    28:             </tr>
+    29:             
+    30:             <% end %>
+  app/views/produtos/index.html.erb:27:in `block in _app_views_produtos_index_html_erb__89366487994385193_69862662023940'
+  app/views/produtos/index.html.erb:20:in `_app_views_produtos_index_html_erb__89366487994385193_69862662023940'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:49:13 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (26.6ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x007f145651ab28>:0x00000002b25690>):
+    24:                 <td> <%= produto.preco %> </td>
+    25:                 <td> <%= produto.quantidade %> </td>
+    26: 
+    27:                 <%= link_to "Remover", produto, method: delete %>
+    28:             </tr>
+    29:             
+    30:             <% end %>
+  app/views/produtos/index.html.erb:27:in `block in _app_views_produtos_index_html_erb__89366487994385193_69862662023940'
+  app/views/produtos/index.html.erb:20:in `_app_views_produtos_index_html_erb__89366487994385193_69862662023940'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:49:29 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.1ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:49:51 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/produtos/2" for 127.0.0.1 at 2018-08-29 09:49:53 -0300
+Processing by ProdutosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EzQoGAfIaTcfVDkmS8yxzpeFcqSAPo5TMCrIUB9Uq54vLSqUKiLRq8+Nzo/WvevBjd46UM3CxGW8KPc151G7zQ==", "id"=>"2"}
+  [1m[35mProduto Load (0.1ms)[0m  SELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "produtos" WHERE "produtos"."id" = ?  [["id", 2]]
+  [1m[36m (71.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 74ms (ActiveRecord: 72.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 09:49:54 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:23:38 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:24:04 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/produtos/3" for 127.0.0.1 at 2018-08-29 10:24:19 -0300
+Processing by ProdutosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Ki/iiZ0YB4QAUlXV4pJaU34r+iU1ZVgsOiKFxjo9GWsWNuAFsPK/GNCLonx/4wBcZHCy0XiZEhq2ILqjwjgJOA==", "id"=>"3"}
+  [1m[35mProduto Load (0.1ms)[0m  SELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "produtos" WHERE "produtos"."id" = ?  [["id", 3]]
+  [1m[36m (78.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 80ms (ActiveRecord: 78.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:24:19 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/produtos/4" for 127.0.0.1 at 2018-08-29 10:25:09 -0300
+Processing by ProdutosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+UKqKd/TptqnrgCzA7lbJh0bV27zZ0WpmL3pyKFgVwfFW6il8jkeRnd39xqeyAEpB0Afmr6bD58Uv9atWWVHVA==", "id"=>"4"}
+  [1m[35mProduto Load (0.1ms)[0m  SELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "produtos" WHERE "produtos"."id" = ?  [["id", 4]]
+  [1m[36m (75.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 77ms (ActiveRecord: 75.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:25:09 -0300
+Processing by ProdutosController#index as HTML
+  Rendered produtos/index.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/gneves/wp-gui/lojacamisetas/app/views/produtos/index.html.erb:26: syntax error, unexpected ':', expecting '}'
+...btn btn-danger", data {confirm: "Tem certeza que deseja remo...
+...                               ^
+/home/gneves/wp-gui/lojacamisetas/app/views/produtos/index.html.erb:26: syntax error, unexpected ')', expecting =>
+...certeza que deseja remover?"} );@output_buffer.safe_append='...
+...                               ^
+/home/gneves/wp-gui/lojacamisetas/app/views/produtos/index.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;             end 
+                         ^
+/home/gneves/wp-gui/lojacamisetas/app/views/produtos/index.html.erb:44: syntax error, unexpected keyword_do_block, expecting ')'
+'.freeze;             @produtos_por_preco.each do |produto| 
+                                                 ^
+/home/gneves/wp-gui/lojacamisetas/app/views/produtos/index.html.erb:52: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;             end 
+                         ^
+/home/gneves/wp-gui/lojacamisetas/app/views/produtos/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+/home/gneves/wp-gui/lojacamisetas/app/views/produtos/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/produtos/index.html.erb:26: syntax error, unexpected ':', expecting '}'
+  app/views/produtos/index.html.erb:26: syntax error, unexpected ')', expecting =>
+  app/views/produtos/index.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+  app/views/produtos/index.html.erb:44: syntax error, unexpected keyword_do_block, expecting ')'
+  app/views/produtos/index.html.erb:52: syntax error, unexpected keyword_end, expecting ')'
+  app/views/produtos/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/produtos/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:25:39 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:25:39 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/produtos/5" for 127.0.0.1 at 2018-08-29 10:25:43 -0300
+Processing by ProdutosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3W31ClWzdLE9vSH8SDh59gQ7wat7kS2kB/bHgn9czIzhdPeGeFnMLe1k1lXVSSP5HmCJXzZtZ5KL9Pjnh1nc3w==", "id"=>"5"}
+  [1m[35mProduto Load (0.1ms)[0m  SELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "produtos" WHERE "produtos"."id" = ?  [["id", 5]]
+  [1m[36m (53.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 55ms (ActiveRecord: 53.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:25:43 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:26:22 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.1ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:27:00 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:29:02 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:29:14 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:29:29 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-08-29 10:29:30 -0300
+Processing by ProdutosController#new as HTML
+  Rendered produtos/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 26ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-08-29 10:31:28 -0300
+Processing by ProdutosController#new as HTML
+  Rendered produtos/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:41:20 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for 127.0.0.1 at 2018-08-29 10:41:20 -0300
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for 127.0.0.1 at 2018-08-29 10:41:20 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-08-29 10:41:20 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-08-29 10:41:20 -0300
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2018-08-29 10:41:20 -0300
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2018-08-29 10:41:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2018-08-29 10:41:21 -0300
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 127.0.0.1 at 2018-08-29 10:41:21 -0300
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-08-29 10:41:22 -0300
+Processing by ProdutosController#new as HTML
+  Rendered produtos/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/produtos" for 127.0.0.1 at 2018-08-29 10:41:28 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SffmUOWTSDUBR3w/BDYSpe6P29kaDK/fpogpOtNKOkyBPsI36XMoqp1+t+589DXMP0s2COJYBwe0pMpIWNVmWQ==", "produto"=>{"nome"=>"teste", "descricao"=>"teste", "quantidade"=>"10", "preco"=>"50"}, "commit"=>"Criar o Produto"}
+Unpermitted parameter: quantidade
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "produtos" ("nome", "preco", "descricao", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "teste"], ["preco", 50.0], ["descricao", "teste"], ["created_at", "2018-08-29 13:41:28.574441"], ["updated_at", "2018-08-29 13:41:28.574441"]]
+  [1m[35m (189.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 193ms (ActiveRecord: 189.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:41:28 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/produtos/7" for 127.0.0.1 at 2018-08-29 10:41:34 -0300
+Processing by ProdutosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jRPHWEIZASacM6g3DbV/+f71cdNbpxhdUBoi/cy9FCxF2uM/TvlhuQAKY+Z1d1iQLzGcAqPzsIVCNsGPRyJIOQ==", "id"=>"7"}
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "produtos" WHERE "produtos"."id" = ?[0m  [["id", 7]]
+  [1m[35m (78.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 81ms (ActiveRecord: 78.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:41:34 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:44:18 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.2ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms)
+
+SyntaxError (/home/gneves/wp-gui/lojacamisetas/app/views/layouts/application.html.erb:13: syntax error, unexpected '<', expecting ')'
+  <% end );@output_buffer.safe_append='
+   ^
+/home/gneves/wp-gui/lojacamisetas/app/views/layouts/application.html.erb:22: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/gneves/wp-gui/lojacamisetas/app/views/layouts/application.html.erb:24: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/layouts/application.html.erb:13: syntax error, unexpected '<', expecting ')'
+  app/views/layouts/application.html.erb:22: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/layouts/application.html.erb:24: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:44:59 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/" for 127.0.0.1 at 2018-08-29 10:45:02 -0300
+
+ActionController::RoutingError (No route matches [POST] "/"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (15.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:45:49 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/" for 127.0.0.1 at 2018-08-29 10:45:56 -0300
+
+ActionController::RoutingError (No route matches [POST] "/"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (15.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:46:57 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:47:41 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:47:43 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:47:44 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:52:51 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.3ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:53:13 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 10:57:07 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 32ms (Views: 31.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/produtos/busca?utf8=%E2%9C%93&nome=teste&authenticity_token=V5wlXsiEft1pkdkb%2Br%2FOLO2F%2B5jnu6fkxAXLIvlJ9EOfVQE5xGQeQvWoEsqCfelFPEEWSR%2FvDzzWKShQctaoVg%3D%3D" for 127.0.0.1 at 2018-08-29 10:57:09 -0300
+Processing by ProdutosController#busca as HTML
+  Parameters: {"utf8"=>"✓", "nome"=>"teste", "authenticity_token"=>"V5wlXsiEft1pkdkb+r/OLO2F+5jnu6fkxAXLIvlJ9EOfVQE5xGQeQvWoEsqCfelFPEEWSR/vDzzWKShQctaoVg=="}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template produtos/busca, application/busca with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/home/gneves/wp-gui/lojacamisetas/app/views"
+  * "/usr/local/rvm/gems/ruby-2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/views"
+):
+  actionview (4.2.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.6) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.10) lib/rack/etag.rb:24:in `call'
+  rack (1.6.10) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.10) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (14.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 11:06:56 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.3ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/produtos/busca?utf8=%E2%9C%93&nome=camise&authenticity_token=hOKqnm3Yyl%2BNbq3kdwsleHlXkfTkhZtxqs4DNAUqlZ9MK475YTiqwBFXZjUPyQIRqJN8JRzRM6m44uBGjrXJig%3D%3D" for 127.0.0.1 at 2018-08-29 11:07:00 -0300
+Processing by ProdutosController#busca as HTML
+  Parameters: {"utf8"=>"✓", "nome"=>"camise", "authenticity_token"=>"hOKqnm3Yyl+Nbq3kdwsleHlXkfTkhZtxqs4DNAUqlZ9MK475YTiqwBFXZjUPyQIRqJN8JRzRM6m44uBGjrXJig=="}
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos" WHERE (nome like '%camise%')[0m
+  Rendered produtos/busca.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/produtos/busca?utf8=%E2%9C%93&nome=camise&authenticity_token=hOKqnm3Yyl%2BNbq3kdwsleHlXkfTkhZtxqs4DNAUqlZ9MK475YTiqwBFXZjUPyQIRqJN8JRzRM6m44uBGjrXJig%3D%3D" for 127.0.0.1 at 2018-08-29 11:07:07 -0300
+Processing by ProdutosController#busca as HTML
+  Parameters: {"utf8"=>"✓", "nome"=>"camise", "authenticity_token"=>"hOKqnm3Yyl+Nbq3kdwsleHlXkfTkhZtxqs4DNAUqlZ9MK475YTiqwBFXZjUPyQIRqJN8JRzRM6m44uBGjrXJig=="}
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos" WHERE (nome like '%camise%')
+  Rendered produtos/busca.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/produtos/busca?utf8=%E2%9C%93&nome=camise&authenticity_token=hOKqnm3Yyl%2BNbq3kdwsleHlXkfTkhZtxqs4DNAUqlZ9MK475YTiqwBFXZjUPyQIRqJN8JRzRM6m44uBGjrXJig%3D%3D" for 127.0.0.1 at 2018-08-29 11:08:01 -0300
+Processing by ProdutosController#busca as HTML
+  Parameters: {"utf8"=>"✓", "nome"=>"camise", "authenticity_token"=>"hOKqnm3Yyl+Nbq3kdwsleHlXkfTkhZtxqs4DNAUqlZ9MK475YTiqwBFXZjUPyQIRqJN8JRzRM6m44uBGjrXJig=="}
+  [1m[36mProduto Load (0.3ms)[0m  [1mSELECT "produtos".* FROM "produtos" WHERE (nome like '%camise%')[0m
+  Rendered produtos/busca.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 11:09:41 -0300
+
+SyntaxError (/home/gneves/wp-gui/lojacamisetas/app/controllers/produtos_controller.rb:22: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...duto.where "nome like ?", nome"%#{params[:nome_a_buscar]}%"
+...                               ^):
+  app/controllers/produtos_controller.rb:22: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 11:10:10 -0300
+
+SyntaxError (/home/gneves/wp-gui/lojacamisetas/app/controllers/produtos_controller.rb:22: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...duto.where "nome like ?", nome"%#{nome_a_buscar}%"
+...                               ^):
+  app/controllers/produtos_controller.rb:22: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (12.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 11:10:31 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined local variable or method `nome_a_buscar' for #<#<Class:0x007f145664a2a0>:0x007f14565f0bd8>):
+    13:                       method: :get, 
+    14:                       class: "navbar-form navbar-right" do %>
+    15:     <div class="form-group">
+    16:       <%= text_field_tag :nome, nome_a_buscar, class: "form-control" %>
+    17:       <%= button_to "Buscar", nil, class: "btn btn-default" %>
+    18:     </div>
+    19:   <% end %>
+  app/views/layouts/application.html.erb:16:in `block (2 levels) in _app_views_layouts_application_html_erb___2394521023206792022_69862662365500'
+  app/views/layouts/application.html.erb:12:in `block in _app_views_layouts_application_html_erb___2394521023206792022_69862662365500'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___2394521023206792022_69862662365500'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 11:10:42 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 11:11:14 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/produtos/busca?utf8=%E2%9C%93&nome=camise&authenticity_token=ilYwKG09kbVNYaMXqT%2FegZpMRMQDuvBXsmRnJUyN2KVCnxRPYd3xKtFYaMbR%2FfnoS4ipFfvuWI%2BgSIRXxxKEsA%3D%3D" for 127.0.0.1 at 2018-08-29 11:11:20 -0300
+Processing by ProdutosController#busca as HTML
+  Parameters: {"utf8"=>"✓", "nome"=>"camise", "authenticity_token"=>"ilYwKG09kbVNYaMXqT/egZpMRMQDuvBXsmRnJUyN2KVCnxRPYd3xKtFYaMbR/fnoS4ipFfvuWI+gSIRXxxKEsA=="}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `nome_a_buscar' for #<ProdutosController:0x007f1456acaed8>
+Did you mean?  @nome_a_buscar):
+  app/controllers/produtos_controller.rb:22:in `busca'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 11:12:03 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.3ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/produtos/busca?utf8=%E2%9C%93&nome=camise&authenticity_token=8%2BgkinmEFK5Vnxgl4uWmUkCTFTlKpz51ocI%2BRLIm8wU7IQDtdWR0Mcmm0%2FSaJ4E7kVf46LLzlq2z7t02ObmvEA%3D%3D" for 127.0.0.1 at 2018-08-29 11:12:05 -0300
+Processing by ProdutosController#busca as HTML
+  Parameters: {"utf8"=>"✓", "nome"=>"camise", "authenticity_token"=>"8+gkinmEFK5Vnxgl4uWmUkCTFTlKpz51ocI+RLIm8wU7IQDtdWR0Mcmm0/SaJ4E7kVf46LLzlq2z7t02ObmvEA=="}
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos" WHERE (nome like '%camise%')
+  Rendered produtos/busca.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/produtos/busca?utf8=%E2%9C%93&nome=camise&authenticity_token=Tgne1ooVxrkamXkg7A0BrCK4FtQfq4jCtbbROAzllDSGwPqxhvWmJoagsvGUzybF83z7Bef%2FIBqnmjJKh3rIIQ%3D%3D" for 127.0.0.1 at 2018-08-29 11:12:07 -0300
+Processing by ProdutosController#busca as HTML
+  Parameters: {"utf8"=>"✓", "nome"=>"camise", "authenticity_token"=>"Tgne1ooVxrkamXkg7A0BrCK4FtQfq4jCtbbROAzllDSGwPqxhvWmJoagsvGUzybF83z7Bef/IBqnmjJKh3rIIQ=="}
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos" WHERE (nome like '%camise%')[0m
+  Rendered produtos/busca.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 27ms (Views: 26.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/produtos/busca?utf8=%E2%9C%93&nome=camise&authenticity_token=794Kb90gKZHXoOwpCKOQgACNyZMHaNqbFyqL3I%2B9sNUnFy4I0cBJDkuZJ%2FhwYbfp0UkkQv88ckMFBmiuBCLswA%3D%3D" for 127.0.0.1 at 2018-08-29 11:12:07 -0300
+Processing by ProdutosController#busca as HTML
+  Parameters: {"utf8"=>"✓", "nome"=>"camise", "authenticity_token"=>"794Kb90gKZHXoOwpCKOQgACNyZMHaNqbFyqL3I+9sNUnFy4I0cBJDkuZJ/hwYbfp0UkkQv88ckMFBmiuBCLswA=="}
+  [1m[35mProduto Load (0.2ms)[0m  SELECT "produtos".* FROM "produtos" WHERE (nome like '%camise%')
+  Rendered produtos/busca.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.2ms)

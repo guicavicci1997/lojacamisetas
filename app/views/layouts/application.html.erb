@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= nav_bar brand: "Camisas de rock", brand_links: root_url %>
+<%= nav_bar brand: "Camisas de rock", brand_links: root_url do %>
+    <% form_tag busca_produto_path, 
+                      method: :get, 
+                      class: "navbar-form navbar-right" do %>
+    <div class="form-group">
+      <%= text_field_tag :nome, @nome_a_buscar, class: "form-control" %>
+      <%= button_to "Buscar", nil, class: "btn btn-default" %>
+    </div>
+  <% end %>
+<% end %>
 
 <div class="container">
     <%= yield %>
