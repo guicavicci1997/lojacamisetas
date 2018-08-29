@@ -5,10 +5,22 @@ class ProdutosController < ApplicationController
         @produtos_por_preco = Produto.order :preco
     end
 
+    def new 
+        @produto = Produto.new 
+    end
+
     def create
-        valores = params.require(:produto).permit :nome, :preco, :descricao
-        produto = Produto.create valores
-        redirect_to root_url
+        valores = params.require(:produto).permit :nome, :preco, :descricao, :quantidade
+        @produto = Produto.new valores
+        puts "*"*100
+        puts @produto
+
+        if @produto.save
+            flash[:notice] = "Produto salvo com sucesso"
+            redirect_to root_url
+        else
+            render :new    
+        end
     end
 
     def destroy

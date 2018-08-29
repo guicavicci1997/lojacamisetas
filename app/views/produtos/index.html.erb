@@ -1,61 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <table class ="table table-bordered">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Descricao</th>
-                <th>Preco</th>
-                <th>Quantidade</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @produtos_por_nome.each do |produto| %>
-            <tr>
-                <td> <%= produto.nome %> </td>
-                <td> <%= produto.descricao %> </td>
-                <td> <%= produto.preco %> </td>
-                <td> <%= produto.quantidade %> </td>
-                <td><%= button_to "Remover", produto, method: :delete, class: "btn btn-danger", 
-                                                data: {confirm: "Tem certeza que deseja remover #{produto.nome} ?"} %></td>
-                
-            </tr>
+<% if flash[:notice] %>
+<div class="alert alert-success role="alert" ><%= flash[:notice] %></div>
+<% end %>
+
+<table class ="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descricao</th>
+            <th>Preco</th>
+            <th>Quantidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @produtos_por_nome.each do |produto| %>
+        <tr>
+            <td> <%= produto.nome %> </td>
+            <td> <%= produto.descricao %> </td>
+            <td> <%= produto.preco %> </td>
+            <td> <%= produto.quantidade %> </td>
+            <td><%= button_to "Remover", produto, method: :delete, class: "btn btn-danger", 
+                                            data: {confirm: "Tem certeza que deseja remover #{produto.nome} ?"} %></td>
             
-            <% end %>
-        </tbody>
-    </table>
+        </tr>
+        
+        <% end %>
+    </tbody>
+</table>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Descricao</th>
-                <th>Preco</th>
-                <th>Quantidade</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @produtos_por_preco.each do |produto| %>
-            <tr>
-                <td> <%= produto.nome %> </td>
-                <td> <%= produto.descricao %> </td>
-                <td> <%= produto.preco %> </td>
-                <td> <%= produto.quantidade %> </td>
-            </tr>
-            
-            <% end %>
-        </tbody>
-    </table>
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descricao</th>
+            <th>Preco</th>
+            <th>Quantidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @produtos_por_preco.each do |produto| %>
+        <tr>
+            <td> <%= produto.nome %> </td>
+            <td> <%= produto.descricao %> </td>
+            <td> <%= produto.preco %> </td>
+            <td> <%= produto.quantidade %> </td>
+        </tr>
+        
+        <% end %>
+    </tbody>
+</table>
 
-    <%= link_to "Criar novo produto", new_produto_path %>
-
-    
-</body>
-</html>
+<%= link_to "Criar novo produto", new_produto_path %>

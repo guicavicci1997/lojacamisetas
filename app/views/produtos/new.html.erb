@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-</head>
-<body>
+<% @produto.errors.full_messages.each do |message| %>
+    <div class="alert alert-danger role="alert" ><%=message%></div>    
+<%end%>
 
-<%= form_for Produto.new do |f| %>
+
+<%= form_for @produto do |f| %>
     
     <div class="form-group">
         <%= f.label :nome %>
@@ -33,6 +29,3 @@
     </div>
 
 <%end%>
-    
-</body>
-</html>
