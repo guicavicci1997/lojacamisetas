@@ -4137,3 +4137,514 @@ Processing by ProdutosController#index as HTML
   [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
   Rendered produtos/index.html.erb within layouts/application (3.1ms)
 Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 17:11:37 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  Rendered produtos/_produto.html.erb (1.0ms)
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 09:38:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  Rendered produtos/_produto.html.erb (2.2ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 711ms (Views: 703.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for 127.0.0.1 at 2018-08-31 09:38:30 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-08-31 09:38:30 -0300
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 127.0.0.1 at 2018-08-31 09:38:30 -0300
+
+
+Started DELETE "/produtos/10" for 127.0.0.1 at 2018-08-31 09:40:26 -0300
+Processing by ProdutosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Ad9oamCOPfP7FWSLBYn9Joc/XWMNGCihU63p6rmDERbJFkwNbG5dbGcsr1p9S9pPVvuwsvVMgHlBgQqYMhxNAw==", "id"=>"10"}
+  [1m[35mProduto Load (0.1ms)[0m  SELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (21.8ms)[0m  DELETE FROM "produtos" WHERE "produtos"."id" = ?  [["id", 10]]
+  [1m[36m (63.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 108ms (ActiveRecord: 85.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 09:40:26 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  Rendered produtos/_produto.html.erb (1.5ms)
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-08-31 09:40:32 -0300
+Processing by ProdutosController#new as HTML
+  Rendered produtos/new.html.erb within layouts/application (259.8ms)
+Completed 200 OK in 297ms (Views: 296.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/produtos" for 127.0.0.1 at 2018-08-31 09:40:39 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0DpdUFWC9+l3lGV+6u4b5+xk3CV+L/SD+Wiu6Fssr7IY83k3WWKXduutrq+SLDyOPaAx9IZ7XFvrRE2a0LPzpw==", "produto"=>{"nome"=>"teste", "descricao"=>"teste", "quantidade"=>"", "preco"=>""}, "commit"=>"Criar o Produto"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered produtos/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/produtos" for 127.0.0.1 at 2018-08-31 09:40:45 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JEAVb/2Esz1Nei/i0Er3Pv+2lYjj0B1MIKFPCPQZbErsiTEI8WTTotFD5DOoiNBXLnJ4WRuEtZQyjax6f4YwXw==", "produto"=>{"nome"=>"teste", "descricao"=>"teste", "quantidade"=>"10", "preco"=>"20"}, "commit"=>"Criar o Produto"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "produtos" ("nome", "preco", "descricao", "quantidade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "teste"], ["preco", 20.0], ["descricao", "teste"], ["quantidade", 10], ["created_at", "2018-08-31 12:40:45.475114"], ["updated_at", "2018-08-31 12:40:45.475114"]]
+  [1m[35m (86.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 90ms (ActiveRecord: 87.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 09:40:45 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  Rendered produtos/_produto.html.erb (1.4ms)
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/produtos/busca?utf8=%E2%9C%93&nome=teste&authenticity_token=eOLJfvSxAr%2BC%2BnWaG3fpLzNDP4w%2F7QbQf8eUTGLWIsGwK%2B0Z%2BFFiIB7Dvktjtc5G4ofSXce5rght63c%2B6Ul%2B1A%3D%3D" for 127.0.0.1 at 2018-08-31 09:40:50 -0300
+Processing by ProdutosController#busca as HTML
+  Parameters: {"utf8"=>"✓", "nome"=>"teste", "authenticity_token"=>"eOLJfvSxAr+C+nWaG3fpLzNDP4w/7QbQf8eUTGLWIsGwK+0Z+FFiIB7Dvktjtc5G4ofSXce5rght63c+6Ul+1A=="}
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos" WHERE (nome like '%teste%')[0m
+  Rendered produtos/_produto.html.erb (1.4ms)
+  Rendered produtos/busca.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/produtos/busca?utf8=%E2%9C%93&nome=teste&authenticity_token=eOLJfvSxAr%2BC%2BnWaG3fpLzNDP4w%2F7QbQf8eUTGLWIsGwK%2B0Z%2BFFiIB7Dvktjtc5G4ofSXce5rght63c%2B6Ul%2B1A%3D%3D" for 127.0.0.1 at 2018-08-31 09:40:52 -0300
+Processing by ProdutosController#busca as HTML
+  Parameters: {"utf8"=>"✓", "nome"=>"teste", "authenticity_token"=>"eOLJfvSxAr+C+nWaG3fpLzNDP4w/7QbQf8eUTGLWIsGwK+0Z+FFiIB7Dvktjtc5G4ofSXce5rght63c+6Ul+1A=="}
+  [1m[35mProduto Load (0.2ms)[0m  SELECT "produtos".* FROM "produtos" WHERE (nome like '%teste%')
+  Rendered produtos/_produto.html.erb (1.9ms)
+  Rendered produtos/busca.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-03 10:50:38 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  Rendered produtos/_produto.html.erb (1.9ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 1230ms (Views: 1207.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-09-03 10:50:39 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-03 17:08:12 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  Rendered produtos/_produto.html.erb (1.9ms)
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 976ms (Views: 968.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/departamentos" for 127.0.0.1 at 2018-09-03 17:18:00 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.6) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.6) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /home/gneves/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/gneves/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/gneves/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.7ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (12.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDepartamentos (20180903201741)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "departamentos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180903201741"]]
+  [1m[36m (125.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/departamentos" for 127.0.0.1 at 2018-09-03 17:18:30 -0300
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by DepartamentosController#index as HTML
+  [1m[36mDepartamento Load (0.1ms)[0m  [1mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered departamentos/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 392ms (Views: 384.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/departamentos.self-b60acab5af8d245ed2b3012f77d11d8d207d8eada27756badaf4ef05770d60f6.css?body=1" for 127.0.0.1 at 2018-09-03 17:18:31 -0300
+
+
+Started GET "/assets/scaffold.self-83b741db49389dc7cfdf85bf7537a0219cce48e085c4116afc83d55c9af47c78.css?body=1" for 127.0.0.1 at 2018-09-03 17:18:31 -0300
+
+
+Started GET "/assets/departamentos.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2018-09-03 17:18:31 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-03 17:18:58 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  Rendered produtos/_produto.html.erb (3.5ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 66ms (Views: 62.0ms | ActiveRecord: 0.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDepartamentoIdToProduto (20180903202800)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "produtos" ADD "departamento_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180903202800"]]
+  [1m[36m (67.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/departamentos" for 127.0.0.1 at 2018-09-03 17:29:07 -0300
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by DepartamentosController#index as HTML
+  [1m[36mDepartamento Load (0.2ms)[0m  [1mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered departamentos/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/departamentos/new" for 127.0.0.1 at 2018-09-03 17:29:09 -0300
+Processing by DepartamentosController#new as HTML
+  Rendered departamentos/_form.html.erb (232.2ms)
+  Rendered departamentos/new.html.erb within layouts/application (233.1ms)
+Completed 200 OK in 266ms (Views: 263.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/departamentos" for 127.0.0.1 at 2018-09-03 17:29:14 -0300
+Processing by DepartamentosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dQl4Sa5Z6N/N5+jbsMdW+7q3GtYvQ1e2jErIMNDxuMm9wFwuormIQFHeIwrIBXGSa3P3B9cX/26eZitCW27k3A==", "departamento"=>{"nome"=>"Dept1"}, "commit"=>"Criar Departamento"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "departamentos" ("nome", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["nome", "Dept1"], ["created_at", "2018-09-03 20:29:14.955586"], ["updated_at", "2018-09-03 20:29:14.955586"]]
+  [1m[35m (160.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/departamentos/1
+Completed 302 Found in 164ms (ActiveRecord: 160.5ms)
+
+
+Started GET "/departamentos/1" for 127.0.0.1 at 2018-09-03 17:29:15 -0300
+Processing by DepartamentosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDepartamento Load (0.1ms)[0m  [1mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered departamentos/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/departamentos" for 127.0.0.1 at 2018-09-03 17:29:16 -0300
+Processing by DepartamentosController#index as HTML
+  [1m[35mDepartamento Load (0.1ms)[0m  SELECT "departamentos".* FROM "departamentos"
+  Rendered departamentos/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/departamentos/new" for 127.0.0.1 at 2018-09-03 17:29:19 -0300
+Processing by DepartamentosController#new as HTML
+  Rendered departamentos/_form.html.erb (7.6ms)
+  Rendered departamentos/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/departamentos" for 127.0.0.1 at 2018-09-03 17:29:23 -0300
+Processing by DepartamentosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pYxQSu6GcmnWt7ImdsuNGK9hNDpiPYSRAyY0IPr/fORtRXQt4mYS9kqOefcOCapxfqXZ65ppLEkRCtdScWAg8Q==", "departamento"=>{"nome"=>"Dept2"}, "commit"=>"Criar Departamento"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "departamentos" ("nome", "created_at", "updated_at") VALUES (?, ?, ?)  [["nome", "Dept2"], ["created_at", "2018-09-03 20:29:23.010479"], ["updated_at", "2018-09-03 20:29:23.010479"]]
+  [1m[36m (156.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/departamentos/2
+Completed 302 Found in 159ms (ActiveRecord: 156.4ms)
+
+
+Started GET "/departamentos/2" for 127.0.0.1 at 2018-09-03 17:29:23 -0300
+Processing by DepartamentosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mDepartamento Load (0.1ms)[0m  SELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered departamentos/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/departamentos" for 127.0.0.1 at 2018-09-03 17:29:25 -0300
+Processing by DepartamentosController#index as HTML
+  [1m[36mDepartamento Load (0.1ms)[0m  [1mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered departamentos/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/produtos" for 127.0.0.1 at 2018-09-03 17:48:14 -0300
+
+ActionController::RoutingError (No route matches [GET] "/produtos"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /home/gneves/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/gneves/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/gneves/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.4ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (23.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-03 17:48:19 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.3ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  Rendered produtos/_produto.html.erb (1.5ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-09-03 17:48:21 -0300
+Processing by ProdutosController#new as HTML
+  [1m[35mDepartamento Load (0.1ms)[0m  SELECT "departamentos".* FROM "departamentos"
+  Rendered produtos/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-09-03 17:49:10 -0300
+Processing by ProdutosController#new as HTML
+  [1m[36mDepartamento Load (0.7ms)[0m  [1mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered produtos/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 52ms (Views: 44.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-09-03 17:50:43 -0300
+Processing by ProdutosController#new as HTML
+  [1m[35mDepartamento Load (0.1ms)[0m  SELECT "departamentos".* FROM "departamentos"
+  Rendered produtos/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 37ms (Views: 36.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-09-03 17:58:18 -0300
+Processing by ProdutosController#new as HTML
+  [1m[36mDepartamento Load (0.1ms)[0m  [1mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered produtos/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 47ms (Views: 38.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-03 17:58:22 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.3ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  Rendered produtos/_produto.html.erb (2.4ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 39ms (Views: 32.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/produtos/1" for 127.0.0.1 at 2018-09-03 17:58:23 -0300
+
+ActionController::RoutingError (No route matches [POST] "/produtos/1"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /home/gneves/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/gneves/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/gneves/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (15.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-03 19:08:59 -0300
+
+SyntaxError (/home/gneves/wp-gui/lojacamisetas/app/controllers/produtos_controller.rb:59: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/produtos_controller.rb:59: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-03 19:09:44 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.3ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  Rendered produtos/_produto.html.erb (2.1ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-09-03 19:09:47 -0300
+Processing by ProdutosController#new as HTML
+  [1m[35mDepartamento Load (0.1ms)[0m  SELECT "departamentos".* FROM "departamentos"
+  Rendered produtos/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/produtos" for 127.0.0.1 at 2018-09-03 19:09:56 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"krjo+lC4b+mN8d1WChPKLQrQOmL1nawpGWFiPKb0foVaccydXFgPdhHIFody0e1E2xTXsw3JBPELTYFOLWsikA==", "produto"=>{"nome"=>"teste", "descricao"=>"teste", "departamento_id"=>"1", "quantidade"=>"10", "preco"=>"20"}, "commit"=>"Criar o Produto"}
+Unpermitted parameter: departamento_id
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "produtos" ("nome", "preco", "descricao", "quantidade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nome", "teste"], ["preco", 20.0], ["descricao", "teste"], ["quantidade", 10], ["created_at", "2018-09-03 22:09:56.089039"], ["updated_at", "2018-09-03 22:09:56.089039"]]
+  [1m[36m (175.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 179ms (ActiveRecord: 176.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-03 19:09:56 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5
+  Rendered produtos/_produto.html.erb (1.8ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC[0m
+  Rendered produtos/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/produtos/11/edit" for 127.0.0.1 at 2018-09-03 19:10:00 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"11"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `Ṕroduto' for #<ProdutosController:0x007f672a4d9ed0>):
+  app/controllers/produtos_controller.rb:42:in `edit'
+
+
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.3ms)
+
+
+Started GET "/produtos/11/edit" for 127.0.0.1 at 2018-09-03 19:11:53 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"11"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `Ṕroduto' for #<ProdutosController:0x007f6729f4d250>):
+  app/controllers/produtos_controller.rb:42:in `edit'
+
+
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.7ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-09-03 19:13:58 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProdutosController#new as HTML
+  [1m[35mDepartamento Load (0.1ms)[0m  SELECT "departamentos".* FROM "departamentos"
+  Rendered produtos/new.html.erb within layouts/application (201.1ms)
+Completed 200 OK in 436ms (Views: 423.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-03 19:14:01 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT  "produtos".* FROM "produtos"  ORDER BY "produtos"."nome" ASC LIMIT 5[0m
+  Rendered produtos/_produto.html.erb (1.7ms)
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"  ORDER BY "produtos"."preco" ASC
+  Rendered produtos/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/produtos/1/edit" for 127.0.0.1 at 2018-09-03 19:14:02 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `Ṕroduto' for #<ProdutosController:0x007f07123a3458>):
+  app/controllers/produtos_controller.rb:42:in `edit'
+
+
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.6ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/gneves/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.4ms)
