@@ -1,5 +1,7 @@
 class ProdutosController < ApplicationController
 
+    before_action :set_produto, only: [:edit, :update, :destroy]
+
     def index
         @produtos_por_nome = Produto.order(:nome).limit 5
         @produtos_por_preco = Produto.order :preco
@@ -7,12 +9,11 @@ class ProdutosController < ApplicationController
 
     def new 
         @produto = Produto.new 
-        @departamentos = Departamento.all
+        renderiza_new
     end
 
     def create
-        valores = params.require(:produto).permit :nome, :preco, :descricao, :quantidade, :Departamento_id
-        @produto = Produto.new valores
+        @produto = Produto.new produto_params
         puts "*"*100
         puts @produto
 
@@ -20,15 +21,8 @@ class ProdutosController < ApplicationController
             flash[:notice] = "Produto salvo com sucesso"
             redirect_to root_url
         else
-            @departamentos = Departamento.all
-            render :new    
+            renderiza :new
         end
-    end
-
-    def destroy
-        id = params[:id]
-        Produto.destroy id
-        redirect_to root_url
     end
 
     def busca
@@ -38,23 +32,38 @@ class ProdutosController < ApplicationController
     end
 
     def edit
-        id = params[:id]
-        @produto = Ṕroduto.find(id)
-        @departamentos = Departamento.all
-        render :new
+        renderiza :edit
     end
 
     def update
-        id = params[:id]
-        @produto = Produto.find(id)
-        valores = params.require(:produto).permit :nome, :preco, :descricao, :quantidade, :Departamento_id
+        valores = produto_params
         if @produto.update valores
             flash[:notice] = "Produto salvo com sucesso"
             redirect_to root_url
         else
-            @departamentos = Departamento.all
-            render :new
+            renderiza :edit
         end
+    end
+
+    def destroy
+        @produto.destroy
+        redirect_to root_url
+    end
+    
+    private
+
+    def renderiza(view)
+        @departamentos = Departamento.all
+        render view
+    end
+
+    def set_produto
+        id = params[:id]
+        @produto = Produto.find(id)
+    end
+
+    def produto_params
+        params.require(:produto).permit :nome, :preco, :descricao, :quantidade, :departamento_id
     end
 
 end
